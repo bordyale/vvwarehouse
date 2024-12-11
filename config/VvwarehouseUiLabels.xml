@@ -24,6 +24,12 @@ under the License.
         <value xml:lang="zh">Vvwarehouse应用程序</value>
         <value xml:lang="zh-TW">Vvwarehouse應用程式</value>
     </property>
+    <property key="Vvwarehouse">
+		<value xml:lang="en">Vvorder Application</value>
+		<value xml:lang="zh">Vvproduction应用程序</value>
+		<value xml:lang="zh-TW">Vvproduction應用程式</value>
+		<value xml:lang="hu">Raktár</value>
+	</property>
     <property key="VvwarehouseCompanyName">
         <value xml:lang="en">OFBiz: Vvwarehouse</value>
         <value xml:lang="zh-TW">OFBiz: Vvwarehouse</value>
