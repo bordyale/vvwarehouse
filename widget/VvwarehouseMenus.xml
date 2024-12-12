@@ -12,15 +12,15 @@
 		<menu-item name="main" title="${uiLabelMap.CommonMain}">
 			<link target="main" />
 		</menu-item>
-		<menu-item name="findVvChanges" title="${uiLabelMap.VvChanges}">
+		<menu-item name="findVvWhs" title="${uiLabelMap.VvChanges}">
 			<condition>
-				<if-has-permission permission="VVORDER" action="_VIEW" />
+				<if-has-permission permission="VVWAREHOUSE" action="_VIEW" />
 			</condition>
-			<link target="findVvChanges" />
+			<link target="findVvWhs" />
 		</menu-item>
 		<menu-item name="findVvReports" title="${uiLabelMap.VvReports}">
 			<condition>
-				<if-has-permission permission="VVORDER" action="_VIEW" />
+				<if-has-permission permission="VVWAREHOUSE" action="_VIEW" />
 			</condition>
 			<link target="findVvReports" />
 		</menu-item>

@@ -53,4 +53,16 @@ under the License.
         <value xml:lang="en">Reports</value>
         <value xml:lang="hu">Osszesítók</value>
     </property>
+    <property key="EditVvWh">
+        <value xml:lang="en">Edit Warehouse Item</value>
+        <value xml:lang="hu">Raktár Tétel Módósítása</value>
+    </property>
+    <property key="whId">
+        <value xml:lang="en">Warehouse Item Id</value>
+        <value xml:lang="hu">Raktár Tétel Id</value>
+    </property>
+    <property key="VvChanges">
+        <value xml:lang="en">Warehouse Changes</value>
+        <value xml:lang="hu">Raktár változások</value>
+    </property>
 </resource>

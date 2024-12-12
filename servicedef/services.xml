@@ -30,4 +30,33 @@ under the License.
         </description>
     </service> 
     
+    <service name="createVvWh" default-entity-name="VvWarehouse" engine="entity-auto" invoke="create" auth="true">
+		<description>Create a VvWh</description>
+		<permission-service service-name="vvwarehouseGenericPermission" main-action="CREATE" />
+		<auto-attributes include="pk" mode="OUT" optional="false" />
+		<auto-attributes include="nonpk" mode="IN" optional="true" />
+		<override name="name" optional="false" />
+		<override name="weight" optional="false" />
+	</service>
+	<service name="updateVvWh" default-entity-name="VvWarehouse" engine="entity-auto" invoke="update" auth="true">
+		<description>Update a VvWh</description>
+		<permission-service service-name="vvwarehouseGenericPermission" main-action="UPDATE" />
+		<auto-attributes include="pk" mode="IN" optional="false" />
+		<auto-attributes include="nonpk" mode="IN" optional="true" />
+	</service>
+	<service name="deleteVvWh" default-entity-name="VvWarehouse" engine="entity-auto" invoke="delete" auth="true">
+		<description>Delete a VvWh</description>
+		<permission-service service-name="vvwarehouseGenericPermission" main-action="DELETE" />
+		<auto-attributes include="pk" mode="IN" optional="false" />
+	</service>
+    
+    
+    
+    
+    
+    <service name="vvwarehouseGenericPermission" engine="simple" location="component://vvwarehouse/minilang/VvWarehousePermissionServices.xml"
+		invoke="vvwarehouseGenericPermission">
+		<implements service="permissionInterface" />
+	</service>
+    
 </services>
