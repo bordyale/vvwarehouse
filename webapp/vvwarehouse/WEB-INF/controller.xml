@@ -63,6 +63,24 @@
 		<response name="success" type="request" value="json" />
 		<response name="error" type="request" value="json" />
 	</request-map>
+	<request-map uri="LookupPartner">
+		<security https="true" auth="true" />
+		<response name="success" type="view" value="LookupPartner" />
+	</request-map>
+	<request-map uri="LookupPartnerJson">
+		<security https="true" auth="true" />
+		<response name="success" type="request" value="json" />
+		<response name="error" type="request" value="json" />
+	</request-map>
+	<request-map uri="LookupShipment">
+		<security https="true" auth="true" />
+		<response name="success" type="view" value="LookupShipment" />
+	</request-map>
+	<request-map uri="LookupShipmentJson">
+		<security https="true" auth="true" />
+		<response name="success" type="request" value="json" />
+		<response name="error" type="request" value="json" />
+	</request-map>
 
 	<!-- View Mappings -->
 	<view-map name="main" type="screen" page="component://vvwarehouse/widget/VvwarehouseScreens.xml#main" />
@@ -71,4 +89,6 @@
 	<view-map name="EditVvWh" type="screen" page="component://vvwarehouse/widget/VvwarehouseScreens.xml#EditVvWh" />
 
 	<view-map name="LookupProduct" type="screen" page="component://vvwarehouse/widget/LookupScreens.xml#LookupProduct" />
+	<view-map name="LookupPartner" type="screen" page="component://vvwarehouse/widget/LookupScreens.xml#LookupPartner" />
+	<view-map name="LookupShipment" type="screen" page="component://vvwarehouse/widget/LookupScreens.xml#LookupShipment" />
 </site-conf>

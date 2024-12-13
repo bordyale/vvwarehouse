@@ -24,6 +24,10 @@
 		<field name="productId" title="${uiLabelMap.VvProductId}">
 			<lookup target-form-name="LookupProduct" position="center" />
 		</field>
+		<field name="shipmentId" title="${uiLabelMap.VvShipmentId}">
+			<lookup target-form-name="LookupShipment" position="center" />
+		</field>
+		
 		<field name="date" title="${uiLabelMap.VvDate}">
 			<date-time />
 		</field>
