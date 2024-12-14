@@ -12,7 +12,7 @@
 
 
 
-	<form name="EditVvWh" type="single" target="updateVvWh" title="" default-map-name="VvWh" default-entity-name="VwWarehouse">
+	<form name="EditVvWh" type="single" target="updateVvWh" title="" default-map-name="VvWh" default-entity-name="VvWarehouse">
 		<alt-target use-when="VvWh==null" target="createVvWh" />
 		<!-- <auto-fields-service service-name="updateShipment"/> -->
 		<field use-when="VvWh!=null" name="whId" title="${uiLabelMap.whId}">
@@ -27,11 +27,11 @@
 		<field name="shipmentId" title="${uiLabelMap.VvShipmentId}">
 			<lookup target-form-name="LookupShipment" position="center" />
 		</field>
-		
+
 		<field name="date" title="${uiLabelMap.VvDate}">
-			<date-time />
+			<date-time type="date" />
 		</field>
-		<field name="statusId" title="${uiLabelMap.VvStatus}">
+		<field name="status" title="${uiLabelMap.VvStatusId}">
 			<drop-down allow-empty="true">
 				<entity-options entity-name="Enumeration" key-field-name="enumId" description="${description}">
 					<entity-constraint name="enumTypeId" value="VV_WH_CHANGE_TYPE" />
@@ -53,19 +53,27 @@
 		</field>
 	</form>
 
-	<form name="FindVvWh" type="single" target="findVvWhs" default-entity-name="VwWarehouse">
+	<form name="FindVvWh" type="single" target="findVvWhs" default-entity-name="VvWarehouse">
 		<field name="noConditionFind">
 			<hidden value="Y" /><!-- if this isn't there then with all fields empty no query will be done -->
 		</field>
 		<field name="productId" title="${uiLabelMap.VvProductId}">
 			<lookup target-form-name="LookupProduct" position="center" />
 		</field>
+		<field name="status" title="${uiLabelMap.VvStatusId}">
+			<drop-down allow-empty="true">
+				<entity-options entity-name="Enumeration" key-field-name="enumId" description="${description}">
+					<entity-constraint name="enumTypeId" value="VV_WH_CHANGE_TYPE" />
+					<entity-order-by field-name="sequenceId" />
+				</entity-options>
+			</drop-down>
+		</field>
 		<field name="searchButton" title="${uiLabelMap.CommonFind}" widget-style="smallSubmit">
 			<submit button-type="button" />
 		</field>
 	</form>
 
-	<form name="ListVvWh" list-name="list" target="" title="" type="list" paginate-target="findVvWhs" odd-row-style="alternate-row"
+	<form name="ListVvWh" list-name="listResult" target="" title="" type="list" paginate-target="findVvWhs" odd-row-style="alternate-row"
 		default-table-style="basic-table hover-bar" header-row-style="header-row-2" override-list-size="true">
 
 		<actions>
@@ -85,16 +93,16 @@
 			</hyperlink>
 		</field>
 		<field name="productId" title="${uiLabelMap.VvProductName}" widget-style="buttontext" sort-field="true">
-			<display />
+			<display-entity entity-name="VvProduct" key-field-name="productId" description="${name}" />
 		</field>
 		<field name="date" title="${uiLabelMap.VvDate}">
-			<display />
+			<display type="date" />
 		</field>
 		<field name="shipmentId" title="${uiLabelMap.VvShipmentId}">
 			<display />
 		</field>
-		<field name="statusId" title="${uiLabelMap.VvStatusId}">
-			<display />
+		<field name="status" title="${uiLabelMap.VvStatusId}">
+			<display-entity entity-name="Enumeration" key-field-name="enumId" description="${description}" />
 		</field>
 		<field name="sn" title="${uiLabelMap.VvSn}">
 			<display />
@@ -109,6 +117,38 @@
 				<parameter param-name="faseId" />
 			</hyperlink>
 		</field>
+	</form>
+
+	<form name="FilterGeneral" type="single" target="findConditions">
+		<alt-target use-when="stockPage=='Y'" target="findVvWhs" />
+		<field name="filproductId" title="${uiLabelMap.VvProductId}">
+			<lookup target-form-name="LookupProduct" position="center" />
+		</field>
+		
+		<field use-when="stockPage=='Y'" name="filstatus" title="${uiLabelMap.VvStatusId}">
+			<drop-down allow-empty="true">
+				<entity-options entity-name="Enumeration" key-field-name="enumId" description="${description}">
+					<entity-constraint name="enumTypeId" value="VV_WH_CHANGE_TYPE" />
+					<entity-order-by field-name="sequenceId" />
+				</entity-options>
+			</drop-down>
+		</field>
+
+
+		<field use-when="stockPage=='Y'" name="fildate1From" title="${groovy: fildate1FromTitle}">
+			<date-time type="date" />
+		</field>
+		<field use-when="stockPage=='Y'" name="fildate2From" title="${fildate2FromTitle}">
+			<date-time type="date" />
+		</field>
+
+
+
+		<field name="searchButton" title="${uiLabelMap.Filter}" widget-style="smallSubmit">
+			<submit button-type="button" />
+		</field>
+
+
 	</form>
 
 </forms>

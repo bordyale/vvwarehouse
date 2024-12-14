@@ -14,7 +14,7 @@
 		<field name="partnerId" title="${uiLabelMap.VvPartnerId}">
 			<lookup target-form-name="LookupPartner" />
 		</field>
-		<field name="name" title="${uiLabelMap.Name}">
+		<field name="name" title="${uiLabelMap.VvName}">
 			<text-find />
 		</field>
 		<field name="noConditionFind">
@@ -37,12 +37,12 @@
 
 		</actions>
 		<!--<auto-fields-entity entity-name="PartyNameView" default-field-type="display"/> -->
-		<field name="productId" title="${uiLabelMap.productId}" widget-style="smallSubmit">
+		<field name="productId" title="${uiLabelMap.VvProductId}" widget-style="smallSubmit">
 			<hyperlink description="${productId}" target="javascript:set_value('${productId}')" also-hidden="false"
 				target-type="plain" />
 		</field>
 
-		<field name="name" title="${uiLabelMap.Name}">
+		<field name="name" title="${uiLabelMap.VvName}">
 			<display />
 		</field>
 

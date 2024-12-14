@@ -65,4 +65,21 @@ under the License.
         <value xml:lang="en">Warehouse Changes</value>
         <value xml:lang="hu">Raktár változások</value>
     </property>
+    FindVvWh
+    <property key="LookupProduct">
+        <value xml:lang="en">Search Product</value>
+        <value xml:lang="hu">Cikkszám Keresés</value>
+    </property>
+     <property key="FindVvWh">
+        <value xml:lang="en">Search Stock</value>
+        <value xml:lang="hu">Készlet Keresés</value>
+    </property>
+    <property key="From">
+        <value xml:lang="en">From</value>
+        <value xml:lang="hu">Tól</value>
+    </property>
+    <property key="To">
+        <value xml:lang="en">To</value>
+        <value xml:lang="hu">Ig</value>
+    </property>
 </resource>
