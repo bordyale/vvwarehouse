@@ -28,10 +28,12 @@
 			<actions>
 				<set field="titleProperty" value="FindVvWh" />
 				<set field="headerItem" value="findVvWhs" />
-
+				<property-map resource="VvorderUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="VvproductionUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="VvwarehouseUiLabels" map-name="uiLabelMap" global="true"/>
 				<set field="formShippingListName" value="${groovy: return 'ListVvWh';}" />
 				<!-- <script location="component://vfwarehouse/groovyScripts/FindShipping.groovy" /> -->
-
+				<script location="component://vvwarehouse/groovyScripts/ListStock.groovy" />
 				<!-- asmselect parameters, must be prefixed by asm_ for SetMultipleSelectJs.ftl -->
 				<set field="filproductId" from-field="parameters.filproductId" />
 				<set field="filstatus" from-field="parameters.filstatus" />
@@ -39,10 +41,10 @@
 				<set field="fildate1FromTitle" value="${groovy: uiLabelMap.From}" />
 				<set field="fildate2From" from-field="parameters.fildate2From" />
 				<set field="fildate2FromTitle" value="${groovy: uiLabelMap.To}" />
-				
+
 				<set field="stockPage" value="Y" />
 				<set field="viewSize" from-field="parameters.VIEW_SIZE_1" type="Integer" default-value="200" />
-				<script location="component://vvwarehouse/groovyScripts/ListStock.groovy" />
+				
 
 			</actions>
 			<widgets>

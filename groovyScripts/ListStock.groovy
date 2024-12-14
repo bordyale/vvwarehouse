@@ -56,7 +56,7 @@ if (fildate2From) {
 
 filterResult = from("VvWarehouse").where(searchCond).cache(false).queryList()
 
-filterList = EntityUtil.orderBy(filterResult,  ["date"])
+filterList = EntityUtil.orderBy(filterResult,  ["-date"])
 
 List<HashMap<String,Object>> hashMaps = new ArrayList<HashMap<String,Object>>()
 for (GenericValue entry: filterList){

@@ -68,6 +68,13 @@
 				</entity-options>
 			</drop-down>
 		</field>
+		<field  name="fromDateName" title="${groovy: fildate1FromTitle}">
+			<date-time type="date" />
+		</field>
+		<field  name="thruDateName" title="${fildate2FromTitle}">
+			<date-time type="date" />
+		</field>
+		
 		<field name="searchButton" title="${uiLabelMap.CommonFind}" widget-style="smallSubmit">
 			<submit button-type="button" />
 		</field>
@@ -78,6 +85,7 @@
 
 		<actions>
 			<set field="requestParameters.noConditionFind" value="Y" />
+			<!-- <set field="requestParameters.filterByDate" value="Y"/> -->
 			<set field="entityName" value="VvWarehouse" />
 			<service service-name="performFindList" result-map="result" result-map-list="list">
 				<field-map field-name="inputFields" from-field="requestParameters" />
@@ -87,12 +95,12 @@
 				<field-map field-name="viewSize" from-field="viewSize" />
 			</service>
 		</actions>
-		<field name="whId" title="${uiLabelMap.whId}" widget-style="buttontext" sort-field="true">
+		<field name="whId" title="${uiLabelMap.whId}" widget-style="buttontext" >
 			<hyperlink description="${whId}" target="EditVvWh" also-hidden="false">
 				<parameter param-name="whId" />
 			</hyperlink>
 		</field>
-		<field name="productId" title="${uiLabelMap.VvProductName}" widget-style="buttontext" sort-field="true">
+		<field name="productId" title="${uiLabelMap.VvProductName}" widget-style="buttontext" >
 			<display-entity entity-name="VvProduct" key-field-name="productId" description="${name}" />
 		</field>
 		<field name="date" title="${uiLabelMap.VvDate}">
@@ -108,7 +116,7 @@
 			<display />
 		</field>
 
-		<field name="quantity" title="${uiLabelMap.VvQuantity}" widget-style="buttontext" sort-field="true">
+		<field name="quantity" title="${uiLabelMap.VvQuantity}" widget-style="buttontext" >
 			<display />
 		</field>
 		<field name="deleteLink" title=" " widget-style="buttontext">
