@@ -65,7 +65,6 @@ under the License.
         <value xml:lang="en">Warehouse Changes</value>
         <value xml:lang="hu">Raktár változások</value>
     </property>
-    FindVvWh
     <property key="LookupProduct">
         <value xml:lang="en">Search Product</value>
         <value xml:lang="hu">Cikkszám Keresés</value>
@@ -81,5 +80,9 @@ under the License.
     <property key="To">
         <value xml:lang="en">To</value>
         <value xml:lang="hu">Ig</value>
+    </property>
+    <property key="Filter">
+        <value xml:lang="en">Filter</value>
+        <value xml:lang="hu">Szűrők</value>
     </property>
 </resource>
