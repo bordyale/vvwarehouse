@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ofbiz.apache.org/Widget-Form"
+	xsi:schemaLocation="http://ofbiz.apache.org/Widget-Form http://ofbiz.apache.org/dtds/widget-form.xsd">
+
+
+
+	<form name="WarehouseReport" type="multi" use-row-submit="true" list-name="listResult" title="" target="shipmentsreport"
+		odd-row-style="alternate-row" default-table-style="basic-table hover-bar" paginate-target="shipmentsreport">
+		<!-- <row-actions> <entity-one entity-name="OrderItem" value-field="product" auto-field-map="true"/> </row-actions> -->
+
+		<field name="whId" title="${uiLabelMap.whId}" widget-style="buttontext">
+			<display />
+		</field>
+		<field name="productId" title="${uiLabelMap.VvProductName}" widget-style="buttontext">
+			<display-entity entity-name="VvProduct" key-field-name="productId" description="${name}" />
+		</field>
+		<field name="date" title="${uiLabelMap.VvDate}">
+			<display type="date" />
+		</field>
+		<field name="shipmentId" title="${uiLabelMap.VvShipmentId}">
+			<display />
+		</field>
+		<field name="status" title="${uiLabelMap.VvStatusId}">
+			<display-entity entity-name="VvEnumeration" key-field-name="enumId" description="${description}" />
+		</field>
+		<field name="sn" title="${uiLabelMap.VvSn}">
+			<display />
+		</field>
+		<field name="comment" title="${uiLabelMap.VvComent}">
+			<display />
+		</field>
+		<field name="productStatus" title="${uiLabelMap.VvIsReady}">
+			<display-entity entity-name="VvEnumeration" key-field-name="enumId" description="${description}" />
+		</field>
+
+		<field name="quantity" title="${uiLabelMap.VvQuantity}" widget-style="buttontext">
+			<display />
+		</field>
+
+
+
+	</form>
+
+
+
+
+
+
+
+
+
+
+</forms>

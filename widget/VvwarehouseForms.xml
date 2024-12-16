@@ -127,10 +127,10 @@
 			<display />
 		</field>
 		<field name="comment" title="${uiLabelMap.VvComent}">
-			<text size="50" maxlength="50" />
+			<display />
 		</field>
 		<field name="productStatus" title="${uiLabelMap.VvIsReady}">
-			<text size="5" maxlength="5" />
+			<display-entity entity-name="VvEnumeration" key-field-name="enumId" description="${description}" />
 		</field>
 
 		<field name="quantity" title="${uiLabelMap.VvQuantity}" widget-style="buttontext">
@@ -161,7 +161,7 @@
 
 
 		<field use-when="stockPage=='Y'" name="fildate1From" title="${groovy: fildate1FromTitle}">
-			<date-time type="date" />
+			<date-time default-value="${nowTimestamp}" type="date" />
 		</field>
 		<field use-when="stockPage=='Y'" name="fildate2From" title="${fildate2FromTitle}">
 			<date-time type="date" />

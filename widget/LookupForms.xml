@@ -110,6 +110,7 @@
 			<service service-name="performFind" result-map="result" result-map-list="listIt">
 				<field-map field-name="inputFields" from-field="parameters" />
 				<field-map field-name="entityName" value="VvShipment" />
+				<field-map field-name="orderBy" value="-shipmentDate"/>
 			</service>
 
 		</actions>

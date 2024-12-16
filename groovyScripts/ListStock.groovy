@@ -65,6 +65,8 @@ for (GenericValue entry: filterList){
 	e.put("productId",entry.get("productId"))
 	e.put("shipmentId",entry.get("shipmentId"))
 	e.put("rack",entry.get("rack"))
+	e.put("comment",entry.get("comment"))
+	e.put("productStatus",entry.get("productStatus"))
 	e.put("quantity",entry.get("quantity"))
 	e.put("date",entry.get("date"))
 	e.put("status",entry.get("status"))

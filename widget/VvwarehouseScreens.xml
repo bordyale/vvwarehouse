@@ -28,9 +28,9 @@
 			<actions>
 				<set field="titleProperty" value="FindVvWh" />
 				<set field="headerItem" value="findVvWhs" />
-				<property-map resource="VvorderUiLabels" map-name="uiLabelMap" global="true"/>
-                <property-map resource="VvproductionUiLabels" map-name="uiLabelMap" global="true"/>
-                <property-map resource="VvwarehouseUiLabels" map-name="uiLabelMap" global="true"/>
+				<property-map resource="VvorderUiLabels" map-name="uiLabelMap" global="true" />
+				<property-map resource="VvproductionUiLabels" map-name="uiLabelMap" global="true" />
+				<property-map resource="VvwarehouseUiLabels" map-name="uiLabelMap" global="true" />
 				<set field="formShippingListName" value="${groovy: return 'ListVvWh';}" />
 				<!-- <script location="component://vfwarehouse/groovyScripts/FindShipping.groovy" /> -->
 				<script location="component://vvwarehouse/groovyScripts/ListStock.groovy" />
@@ -44,12 +44,22 @@
 
 				<set field="stockPage" value="Y" />
 				<set field="viewSize" from-field="parameters.VIEW_SIZE_1" type="Integer" default-value="200" />
-				
+
 
 			</actions>
 			<widgets>
 				<decorator-screen name="VvwarehouseCommonDecorator" location="${parameters.mainDecoratorLocation}">
 					<decorator-section name="body">
+						<container style="button-bar">
+							<link target="VvWarehouserReportExport.csv" text="${uiLabelMap.CommonExport}" style="buttontext create" target-window="_blank">
+								<parameter param-name="filproductId" />
+								<parameter param-name="fildate1From" />
+								<parameter param-name="fildate2From" />
+								<parameter param-name="filstatus" />
+							</link>
+							<!-- <link target="ReportExportPdf" text="${uiLabelMap.CommonPdf}" style="buttontext create" target-window="_blank"> <parameter 
+								param-name="filshowClientNotes" /> <parameter param-name="filshowClientInfos" /> </link> -->
+						</container>
 						<section>
 							<widgets>
 								<container style="h2">

@@ -89,4 +89,8 @@ under the License.
         <value xml:lang="en">Is Product REady</value>
         <value xml:lang="hu">Kész</value>
     </property>
+    <property key="VvComment">
+        <value xml:lang="en">Comment</value>
+        <value xml:lang="hu">Megegyezés</value>
+    </property>
 </resource>
