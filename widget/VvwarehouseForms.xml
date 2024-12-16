@@ -33,7 +33,7 @@
 		</field>
 		<field name="status" title="${uiLabelMap.VvStatusId}">
 			<drop-down allow-empty="true">
-				<entity-options entity-name="Enumeration" key-field-name="enumId" description="${description}">
+				<entity-options entity-name="VvEnumeration" key-field-name="enumId" description="${description}">
 					<entity-constraint name="enumTypeId" value="VV_WH_CHANGE_TYPE" />
 					<entity-order-by field-name="sequenceId" />
 				</entity-options>
@@ -41,6 +41,17 @@
 		</field>
 		<field name="sn" title="${uiLabelMap.VvSn}">
 			<text size="50" maxlength="50" />
+		</field>
+		<field name="comment" title="${uiLabelMap.VvComent}">
+			<text size="50" maxlength="50" />
+		</field>
+		<field name="productStatus" title="${uiLabelMap.VvIsReady}">
+			<drop-down allow-empty="true">
+				<entity-options entity-name="VvEnumeration" key-field-name="enumId" description="${description}">
+					<entity-constraint name="enumTypeId" value="VV_YES_NO" />
+					<entity-order-by field-name="sequenceId" />
+				</entity-options>
+			</drop-down>
 		</field>
 		<field name="quantity" title="${uiLabelMap.VvQuantity}">
 			<text size="5" maxlength="10" />
@@ -62,19 +73,19 @@
 		</field>
 		<field name="status" title="${uiLabelMap.VvStatusId}">
 			<drop-down allow-empty="true">
-				<entity-options entity-name="Enumeration" key-field-name="enumId" description="${description}">
+				<entity-options entity-name="VvEnumeration" key-field-name="enumId" description="${description}">
 					<entity-constraint name="enumTypeId" value="VV_WH_CHANGE_TYPE" />
 					<entity-order-by field-name="sequenceId" />
 				</entity-options>
 			</drop-down>
 		</field>
-		<field  name="fromDateName" title="${groovy: fildate1FromTitle}">
+		<field name="fromDateName" title="${groovy: fildate1FromTitle}">
 			<date-time type="date" />
 		</field>
-		<field  name="thruDateName" title="${fildate2FromTitle}">
+		<field name="thruDateName" title="${fildate2FromTitle}">
 			<date-time type="date" />
 		</field>
-		
+
 		<field name="searchButton" title="${uiLabelMap.CommonFind}" widget-style="smallSubmit">
 			<submit button-type="button" />
 		</field>
@@ -95,12 +106,12 @@
 				<field-map field-name="viewSize" from-field="viewSize" />
 			</service>
 		</actions>
-		<field name="whId" title="${uiLabelMap.whId}" widget-style="buttontext" >
+		<field name="whId" title="${uiLabelMap.whId}" widget-style="buttontext">
 			<hyperlink description="${whId}" target="EditVvWh" also-hidden="false">
 				<parameter param-name="whId" />
 			</hyperlink>
 		</field>
-		<field name="productId" title="${uiLabelMap.VvProductName}" widget-style="buttontext" >
+		<field name="productId" title="${uiLabelMap.VvProductName}" widget-style="buttontext">
 			<display-entity entity-name="VvProduct" key-field-name="productId" description="${name}" />
 		</field>
 		<field name="date" title="${uiLabelMap.VvDate}">
@@ -110,13 +121,19 @@
 			<display />
 		</field>
 		<field name="status" title="${uiLabelMap.VvStatusId}">
-			<display-entity entity-name="Enumeration" key-field-name="enumId" description="${description}" />
+			<display-entity entity-name="VvEnumeration" key-field-name="enumId" description="${description}" />
 		</field>
 		<field name="sn" title="${uiLabelMap.VvSn}">
 			<display />
 		</field>
+		<field name="comment" title="${uiLabelMap.VvComent}">
+			<text size="50" maxlength="50" />
+		</field>
+		<field name="productStatus" title="${uiLabelMap.VvIsReady}">
+			<text size="5" maxlength="5" />
+		</field>
 
-		<field name="quantity" title="${uiLabelMap.VvQuantity}" widget-style="buttontext" >
+		<field name="quantity" title="${uiLabelMap.VvQuantity}" widget-style="buttontext">
 			<display />
 		</field>
 		<field name="deleteLink" title=" " widget-style="buttontext">
@@ -132,10 +149,10 @@
 		<field name="filproductId" title="${uiLabelMap.VvProductId}">
 			<lookup target-form-name="LookupProduct" position="center" />
 		</field>
-		
+
 		<field use-when="stockPage=='Y'" name="filstatus" title="${uiLabelMap.VvStatusId}">
 			<drop-down allow-empty="true">
-				<entity-options entity-name="Enumeration" key-field-name="enumId" description="${description}">
+				<entity-options entity-name="VvEnumeration" key-field-name="enumId" description="${description}">
 					<entity-constraint name="enumTypeId" value="VV_WH_CHANGE_TYPE" />
 					<entity-order-by field-name="sequenceId" />
 				</entity-options>

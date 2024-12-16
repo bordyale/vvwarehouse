@@ -85,4 +85,8 @@ under the License.
         <value xml:lang="en">Filter</value>
         <value xml:lang="hu">Szűrők</value>
     </property>
+    <property key="VvIsReady">
+        <value xml:lang="en">Is Product REady</value>
+        <value xml:lang="hu">Kész</value>
+    </property>
 </resource>
