@@ -42,7 +42,7 @@
 		<field name="sn" title="${uiLabelMap.VvSn}">
 			<text size="50" maxlength="50" />
 		</field>
-		<field name="comment" title="${uiLabelMap.VvComent}">
+		<field name="comment" title="${uiLabelMap.VvComment}">
 			<text size="50" maxlength="50" />
 		</field>
 		<field name="productStatus" title="${uiLabelMap.VvIsReady}">
@@ -126,7 +126,7 @@
 		<field name="sn" title="${uiLabelMap.VvSn}">
 			<display />
 		</field>
-		<field name="comment" title="${uiLabelMap.VvComent}">
+		<field name="comment" title="${uiLabelMap.VvComment}">
 			<display />
 		</field>
 		<field name="productStatus" title="${uiLabelMap.VvIsReady}">
