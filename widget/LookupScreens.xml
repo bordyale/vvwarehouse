@@ -57,7 +57,9 @@
 				<if-service-permission service-name="vvwarehouseGenericPermission" main-action="VIEW" />
 			</condition>
 			<actions>
-				<property-map resource="VvorderUiLabels" map-name="uiLabelMap" global="true" />
+				<property-map resource="VvorderUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="VvproductionUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="VvwarehouseUiLabels" map-name="uiLabelMap" global="true"/>
 				<set field="title" value="${uiLabelMap.LookupPartner}" />
 				<set field="queryString" from-field="result.queryString" />
 				<set field="viewIndex" from-field="parameters.VIEW_INDEX" type="Integer" default-value="0" />
@@ -99,7 +101,9 @@
 				<if-service-permission service-name="vvwarehouseGenericPermission" main-action="VIEW" />
 			</condition>
 			<actions>
-				<property-map resource="VvwarehouseUiLabels" map-name="uiLabelMap" global="true" />
+				<property-map resource="VvorderUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="VvproductionUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="VvwarehouseUiLabels" map-name="uiLabelMap" global="true"/>
 				<set field="title" value="${uiLabelMap.LookupShipment}" />
 				<set field="queryString" from-field="result.queryString" />
 				<set field="viewIndex" from-field="parameters.VIEW_INDEX" type="Integer" default-value="0" />
