@@ -59,5 +59,13 @@
 		<prim-key field="enumTypeId" />
 
 	</entity>
+	
+	<view-entity entity-name="VvWarehouseQtySumView" package-name="org.apache.ofbiz.order.vvwarehouse"
+		never-cache="true" title="Warehouse Qty Sum View">
+		<member-entity entity-alias="WH" entity-name="VvWarehouse" />
+		<alias entity-alias="WH" name="productId" group-by="true" />
+		<alias entity-alias="WH" name="quantitySum" field="quantity" function="sum" />
+
+	</view-entity>
 
 </entitymodel>
