@@ -21,7 +21,7 @@
 		<field name="productId" type="id"></field>
 		<field name="shipmentId" type="id"></field>
 		<field name="rack" type="value"></field>
-		<field name="quantity" type="floating-point"></field>
+		<field name="quantity" type="fixed-point"></field>
 		<!-- <field name="statusId" type="value"></field> -->
 		<field name="status" type="value"></field>
 		<field name="date" type="date-time"></field>
