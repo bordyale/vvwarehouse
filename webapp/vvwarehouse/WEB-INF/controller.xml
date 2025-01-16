@@ -42,6 +42,10 @@
 		<response name="success" type="view" value="findVvWhs" />
 		<response name="error" type="view" value="findVvWhs" />
 	</request-map>
+	<request-map uri="findVvReports">
+		<security https="true" auth="true" />
+		<response name="success" type="view" value="findVvReports" />
+	</request-map>
 
 	<!-- Events to run on every request before security (chains exempt) -->
 	<!-- <preprocessor> </preprocessor> -->
@@ -84,6 +88,10 @@
 
 	<request-map uri="VvWarehouserReportExport.csv">
 		<security https="true" auth="true" />
+		<response name="success" type="view" value="StockExport" />
+	</request-map>
+	<request-map uri="ReportsExport.csv">
+		<security https="true" auth="true" />
 		<response name="success" type="view" value="ReportExport" />
 	</request-map>
 
@@ -92,11 +100,14 @@
 
 	<view-map name="findVvWhs" type="screen" page="component://vvwarehouse/widget/VvwarehouseScreens.xml#FindVvWhs" />
 	<view-map name="EditVvWh" type="screen" page="component://vvwarehouse/widget/VvwarehouseScreens.xml#EditVvWh" />
+	<view-map name="findVvReports" type="screen" page="component://vvwarehouse/widget/VvwarehouseScreens.xml#FindVvReports" />
 
 	<view-map name="LookupProduct" type="screen" page="component://vvwarehouse/widget/LookupScreens.xml#LookupProduct" />
 	<view-map name="LookupPartner" type="screen" page="component://vvwarehouse/widget/LookupScreens.xml#LookupPartner" />
 	<view-map name="LookupShipment" type="screen" page="component://vvwarehouse/widget/LookupScreens.xml#LookupShipment" />
 	
+	<view-map name="StockExport" type="screencsv" page="component://vvwarehouse/widget/CsvScreens.xml#StockExportCsv"
+		content-type="text/csv" encoding="none" />
 	<view-map name="ReportExport" type="screencsv" page="component://vvwarehouse/widget/CsvScreens.xml#ReportExportCsv"
 		content-type="text/csv" encoding="none" />
 

@@ -107,6 +107,55 @@
 			</widgets>
 		</section>
 	</screen>
+	<screen name="FindVvReports">
+		<section>
+			<actions>
+				<set field="titleProperty" value="VvReports" />
+				<set field="headerItem" value="findVvReports" />
+				<property-map resource="VvorderUiLabels" map-name="uiLabelMap" global="true" />
+				<property-map resource="VvproductionUiLabels" map-name="uiLabelMap" global="true" />
+				<property-map resource="VvwarehouseUiLabels" map-name="uiLabelMap" global="true" />
+				<property-map resource="CommonUiLabels" map-name="uiLabelMap" global="true" />
+				<set field="filproductId" from-field="parameters.filproductId" />
+				<set field="filpartnerId" from-field="parameters.filpartnerId" />
+				<set field="reportPage" value="Y" />
+				<set field="viewSize" from-field="parameters.VIEW_SIZE_1" type="Integer" default-value="200" />
+				<script location="component://vvwarehouse/groovyScripts/ListReport.groovy" />
+
+			</actions>
+			<widgets>
+				<decorator-screen name="VvwarehouseCommonDecorator" location="${parameters.mainDecoratorLocation}">
+					<decorator-section name="body">
+						<container style="button-bar">
+							<link target="ReportsExport.csv" text="${uiLabelMap.CommonExport}" style="buttontext create" target-window="_blank">
+								<parameter param-name="filproductId" />
+								<parameter param-name="filpartnerId" />
+							</link>
+							<!-- <link target="ReportExportPdf" text="${uiLabelMap.CommonPdf}" style="buttontext create" target-window="_blank"> <parameter 
+								param-name="filshowClientNotes" /> <parameter param-name="filshowClientInfos" /> </link> -->
+						</container>
+
+						<screenlet title="${uiLabelMap.Filter}">
+										<include-form name="FilterGeneral" location="component://vvwarehouse/widget/VvwarehouseForms.xml" />
+						</screenlet>
+
+						<screenlet title="${uiLabelMap.Report}">
+
+							<container>
+								<label style="h2" text="${uiLabelMap.WarehouseStock}" />
+							</container>
+							<include-form name="ListReport" location="component://vvwarehouse/widget/CsvForms.xml" />
+					
+						</screenlet>
+
+
+
+					</decorator-section>
+				</decorator-screen>
+			</widgets>
+		</section>
+	</screen>
+
 
 
 </screens>

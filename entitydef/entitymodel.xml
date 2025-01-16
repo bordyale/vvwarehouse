@@ -63,9 +63,13 @@
 	<view-entity entity-name="VvWarehouseQtySumView" package-name="org.apache.ofbiz.order.vvwarehouse"
 		never-cache="true" title="Warehouse Qty Sum View">
 		<member-entity entity-alias="WH" entity-name="VvWarehouse" />
+		<member-entity entity-alias="PR" entity-name="VvProduct" />
 		<alias entity-alias="WH" name="productId" group-by="true" />
+		<alias entity-alias="PR" name="partnerId" group-by="true" />
 		<alias entity-alias="WH" name="quantitySum" field="quantity" function="sum" />
-
+		<view-link entity-alias="WH" rel-entity-alias="PR">
+			<key-map field-name="productId" />
+		</view-link>
 	</view-entity>
 
 </entitymodel>

@@ -93,4 +93,8 @@ under the License.
         <value xml:lang="en">Comment</value>
         <value xml:lang="hu">Megegyezés</value>
     </property>
+    <property key="WarehouseStock">
+        <value xml:lang="en">Warehouse Stock</value>
+        <value xml:lang="hu">Raktár készlet</value>
+    </property>
 </resource>

@@ -18,14 +18,13 @@
 				<parameter param-name="fildate1From" value="${nowTimestamp}" />
 			</link>
 		</menu-item>
-		<!-- <menu-item name="findVvReports" title="${uiLabelMap.VvReports}">
+		<menu-item name="findVvReports" title="${uiLabelMap.VvReports}">
 			<condition>
 				<if-has-permission permission="VVWAREHOUSE" action="_VIEW" />
 			</condition>
 			<link target="findVvReports">
-				<parameter param-name="fildate1From" value="${nowTimestamp}" />
 			</link>
-		</menu-item> -->
+		</menu-item>
 	</menu>
 
 </menus>

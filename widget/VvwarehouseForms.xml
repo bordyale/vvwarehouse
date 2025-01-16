@@ -28,11 +28,11 @@
 			<lookup target-form-name="LookupShipment" position="center" />
 		</field>
 
-		<field name="date" title="${uiLabelMap.VvDate}">
+		<field name="date" title="${uiLabelMap.VvDate}" required-field="true">
 			<date-time type="date" />
 		</field>
 		<field name="status" title="${uiLabelMap.VvStatusId}">
-			<drop-down allow-empty="true">
+			<drop-down allow-empty="false">
 				<entity-options entity-name="VvEnumeration" key-field-name="enumId" description="${description}">
 					<entity-constraint name="enumTypeId" value="VV_WH_CHANGE_TYPE" />
 					<entity-order-by field-name="sequenceId" />
@@ -53,7 +53,7 @@
 				</entity-options>
 			</drop-down>
 		</field>
-		<field name="quantity" title="${uiLabelMap.VvQuantity}">
+		<field name="quantity" title="${uiLabelMap.VvQuantity}" required-field="true">
 			<text size="5" maxlength="10" />
 		</field>
 		<field name="submitButton" use-when="VvWh==null" title="${uiLabelMap.CommonCreate}">
@@ -146,8 +146,12 @@
 
 	<form name="FilterGeneral" type="single" target="findConditions">
 		<alt-target use-when="stockPage=='Y'" target="findVvWhs" />
+		<alt-target use-when="reportPage=='Y'" target="findVvReports" />
 		<field name="filproductId" title="${uiLabelMap.VvProductId}">
 			<lookup target-form-name="LookupProduct" position="center" />
+		</field>
+		<field  use-when="reportPage=='Y'" name="filpartnerId" title="${uiLabelMap.VvPartnerId}">
+			<lookup target-form-name="LookupPartner" position="center" />
 		</field>
 
 		<field use-when="stockPage=='Y'" name="filstatus" title="${uiLabelMap.VvStatusId}">

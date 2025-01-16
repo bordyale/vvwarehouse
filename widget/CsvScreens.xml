@@ -2,10 +2,7 @@
 <screens xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ofbiz.apache.org/Widget-Screen"
 	xsi:schemaLocation="http://ofbiz.apache.org/Widget-Screen http://ofbiz.apache.org/dtds/widget-screen.xsd">
 
-
-
-
-	<screen name="ReportExportCsv">
+	<screen name="StockExportCsv">
 		<section>
 			<actions>
 				<property-map resource="VvorderUiLabels" map-name="uiLabelMap" global="true" />
@@ -19,7 +16,7 @@
 				<set field="fildate2From" from-field="parameters.fildate2From" />
 				<set field="fildate2FromTitle" value="${groovy: uiLabelMap.To}" />
 				<set field="headerItem" value="findVvReports" />
-				<set field="reportPage" value="Y" />
+				<set field="stockPage" value="Y" />
 
 				<set field="viewSize" from-field="parameters.VIEW_SIZE_1" type="Integer" default-value="10000" />
 				<set field="viewIndex" from-field="parameters.VIEW_INDEX" type="Integer" default-value="0" />
@@ -32,6 +29,40 @@
 					<label style="h2" text="${uiLabelMap.VvWarehouse}" />
 				</container>
 				<include-form name="WarehouseReport" location="component://vvwarehouse/widget/CsvForms.xml" />
+
+				
+
+
+			</widgets>
+		</section>
+	</screen>
+
+
+
+
+	<screen name="ReportExportCsv">
+		<section>
+			<actions>
+				<property-map resource="VvorderUiLabels" map-name="uiLabelMap" global="true" />
+				<property-map resource="VvproductionUiLabels" map-name="uiLabelMap" global="true" />
+				<property-map resource="VvwarehouseUiLabels" map-name="uiLabelMap" global="true" />
+				<property-map resource="CommonUiLabels" map-name="uiLabelMap" global="true" />
+				<set field="filproductId" from-field="parameters.filproductId" />
+				<set field="filpartnerId" from-field="parameters.filpartnerId" />
+				<set field="headerItem" value="findVvReports" />
+				<set field="reportPage" value="Y" />
+
+				<set field="viewSize" from-field="parameters.VIEW_SIZE_1" type="Integer" default-value="10000" />
+				<set field="viewIndex" from-field="parameters.VIEW_INDEX" type="Integer" default-value="0" />
+				<property-to-field resource="widget" property="widget.form.defaultViewSize" field="viewSizeDefaultValue" />
+				<script location="component://vvwarehouse/groovyScripts/ListReport.groovy" />
+
+			</actions>
+			<widgets>
+				<container>
+					<label style="h2" text="${uiLabelMap.VvWarehouse}" />
+				</container>
+				<include-form name="ListReport" location="component://vvwarehouse/widget/CsvForms.xml" />
 
 				
 

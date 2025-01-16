@@ -42,6 +42,22 @@
 	</form>
 
 
+	<form name="ListReport" type="multi" use-row-submit="true" list-name="listResult" title="" target="shipmentsreport"
+		odd-row-style="alternate-row" default-table-style="basic-table hover-bar" paginate-target="shipmentsreport">
+		<!-- <row-actions> <entity-one entity-name="OrderItem" value-field="product" auto-field-map="true"/> </row-actions> -->
+
+		<field name="productId" title="${uiLabelMap.VvProductName}" widget-style="buttontext">
+			<display-entity entity-name="VvProduct" key-field-name="productId" description="${name}" />
+		</field>
+
+		<field name="quantitySum" title="${uiLabelMap.VvQuantity}" widget-style="buttontext">
+			<display />
+		</field>
+
+
+
+	</form>
+
 
 
 
