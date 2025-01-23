@@ -29,7 +29,7 @@
 		</field>
 
 		<field name="date" title="${uiLabelMap.VvDate}" required-field="true">
-			<date-time type="date" />
+			<date-time/>
 		</field>
 		<field name="status" title="${uiLabelMap.VvStatusId}">
 			<drop-down allow-empty="false">
