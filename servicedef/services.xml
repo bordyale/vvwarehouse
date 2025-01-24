@@ -35,8 +35,8 @@ under the License.
 		<permission-service service-name="vvwarehouseGenericPermission" main-action="CREATE" />
 		<auto-attributes include="pk" mode="OUT" optional="false" />
 		<auto-attributes include="nonpk" mode="IN" optional="true" />
-		<override name="name" optional="false" />
-		<override name="weight" optional="false" />
+		<override name="date" optional="false" />
+		<override name="quantity" optional="false" />
 	</service>
 	<service name="updateVvWh" default-entity-name="VvWarehouse" engine="entity-auto" invoke="update" auth="true">
 		<description>Update a VvWh</description>
